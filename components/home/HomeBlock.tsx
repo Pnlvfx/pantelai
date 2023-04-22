@@ -1,6 +1,5 @@
 import { chatUrl } from '@/config/config';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const HomeBlock = () => {
   return (
@@ -32,11 +31,11 @@ const HomeBlock = () => {
                     <div className="mt-4">
                       <ul>
                         <li className="mt-1 first:mt-0">
-                          <Link rel="noopener" target="_blank" href={chatUrl} className="relative inline-block">
+                          <a rel="noopener" target="_blank" href={chatUrl} className="relative inline-block">
                             <span className="flex items-center">
                               <span className="underline underline-offset-4 text-[16px] leading-[130%]">Try AInstein chat</span>
                             </span>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </div>
