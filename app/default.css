@@ -1,0 +1,111 @@
+:root {
+  --container-width: unset;
+  --outer-gutter: 16px;
+  --inner-gutter: 16px;
+}
+
+.mt-spacing-4 {
+  margin-top: 16px;
+}
+
+.mt-spacing-7 {
+  margin-top: 5.25rem;
+}
+
+.pt-spacing-7 {
+  padding-top: 5.25rem;
+}
+
+.pb-spacing-7 {
+  padding-bottom: 5.25rem;
+}
+
+.pnl-container {
+  width: calc(var(--container-width, 100%) - (2 * var(--outer-gutter, 0)));
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+.cols-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: calc(var(--inner-gutter) * -1);
+}
+
+.cols-container > [class*='-cols'] {
+  margin-left: var(--inner-gutter);
+}
+
+.ui-block {
+  position: relative;
+  z-index: 15;
+}
+
+.ui-block--text {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.ui-richtext p + p {
+  margin-top: 16px;
+}
+
+.ui-richtext ul {
+  margin-top: 16px;
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+.ui-richtext ol li:first-child,
+.ui-richtext ul li:first-child {
+  margin-top: 0rem;
+}
+
+.ui-richtext ol li,
+.ui-richtext ul li {
+  margin-top: 0.5rem;
+}
+
+.f-body-1 {
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.f-heading-3 {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 744px) {
+  .f-heading-3 {
+    font-size: 1.5rem;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+  }
+}
+
+.ratio1x1 {
+  --ratio: 100%;
+}
+
+.ratio {
+  --ratio: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.ratio:before {
+  content: attr(\1f47b);
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: var(--ratio);
+}
