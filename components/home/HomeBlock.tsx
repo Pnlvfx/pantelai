@@ -1,4 +1,5 @@
 import { chatUrl } from '@/config/config';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const HomeBlock = () => {
@@ -7,15 +8,22 @@ const HomeBlock = () => {
       <div className="mt-spacing-7">
         <div className="pnl-container border-t border-white pt-2 md:pt-3">
           <div className="cols-container">
-            <div className="w-6-cols md:w-4-cols lg:w-6-cols order-2 md:order-1 mt-10 md:mt-[10px]">
+            <div className="w-6-cols md:w-4-cols order-2 md:order-1 mt-10 md:mt-[10px]">
               <div className="ratio ratio1x1">
-                <img src={'/chatGPT.avif'} width={2048} height={2048} alt="ChatGPT graphic" className="w-full h-full object-cover absolute inset-0" />
+                <Image
+                  sizes="100vw"
+                  width={2048}
+                  height={2048}
+                  src={'/chat-intro.jpg'}
+                  alt="ChatGPT graphic"
+                  className="w-full h-full object-cover absolute inset-0 rotate-180"
+                />
               </div>
             </div>
-            <div className="w-6-cols md:w-4-cols lg:w-6-cols order-1 md:order-2 mt-10 md:mt-[10px]">
+            <div className="w-6-cols md:w-4-cols order-1 md:order-2">
               <div className="md:pr-9 lg:pr-0 lg:w-4-cols">
                 <h3 className="text-[1.75rem] leading-[110%]">ChatGPT</h3>
-                <div className="mt-4">
+                <div className="mt-4 block">
                   <div>
                     <span className="w-full first:mt-0 text-[16px] leading-[130%]">
                       We use an OpenAI model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT
