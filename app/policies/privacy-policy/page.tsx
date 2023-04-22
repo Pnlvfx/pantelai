@@ -1,6 +1,11 @@
 import PolicyHeader from '@/components/policies/PolicyHeader';
 import UIpolicyHead from '@/components/policies/UIpolicyHead';
 import UIpolicyText from '@/components/policies/UIpolicyText';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+};
 
 const PolicyPage = () => {
   return (

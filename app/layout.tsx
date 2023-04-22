@@ -3,21 +3,7 @@ import './globals.css';
 import './default.css';
 import Header from '@/components/Header';
 import { description } from './page';
-
-export const metadata = {
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    userScalable: false,
-  },
-  title: 'PantelAI',
-  description,
-  icons: {
-    icon: `${clientUrl}/favicon32x32.png`,
-    shortcut: `${clientUrl}/favicon-16x16.png`,
-    apple: `${clientUrl}/apple-touch-icon.png`,
-  },
-};
+import { Metadata } from 'next';
 
 const RootLayout = ({ children }: ChildrenProps) => {
   return (
@@ -49,3 +35,18 @@ const RootLayout = ({ children }: ChildrenProps) => {
 };
 
 export default RootLayout;
+
+export const metadata: Metadata = {
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    userScalable: false,
+  },
+  title: 'PantelAI',
+  description,
+  icons: {
+    icon: `${clientUrl}/favicon32x32.png`,
+    shortcut: `${clientUrl}/favicon-16x16.png`,
+    apple: `${clientUrl}/apple-touch-icon.png`,
+  },
+};

@@ -1,5 +1,5 @@
 interface PolicyHeaderProps {
-  title: 'Privacy policy' | 'Term of use';
+  title: 'Privacy policy' | 'Terms of use';
 }
 
 const PolicyHeader = ({ title }: PolicyHeaderProps) => {
