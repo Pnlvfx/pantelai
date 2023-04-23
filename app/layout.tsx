@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import { description } from './page';
 import { Metadata } from 'next';
 import Footer from '@/components/footer/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const RootLayout = ({ children }: ChildrenProps) => {
   return (
@@ -14,6 +15,7 @@ const RootLayout = ({ children }: ChildrenProps) => {
           <div>
             <Header />
             {children}
+            <Analytics />
           </div>
         </div>
         <Footer />
