@@ -2,8 +2,9 @@
 
 import { useRef, useState } from 'react';
 import { VideoPauseFromBarIcon, VideoPlayFromBarIcon } from '../utils/SVG/PlayIcon';
+import Image from 'next/image';
 
-const BgVideo = () => {
+const BgVideo = ({ isBot }: { isBot: boolean }) => {
   const ref = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -21,7 +22,25 @@ const BgVideo = () => {
 
   return (
     <div className="relative w-full h-full">
-      <video ref={ref} autoPlay loop playsInline muted className="relative z-20 h-full w-full object-cover transition-opacity opacity-100">
+      <div className="w-full h-full absolute inset-0 z-10">
+        <div className="w-full h-full">
+          <Image
+            src="/intro-thumb.png"
+            width={1920}
+            height={1920}
+            className="w-full h-full object-cover"
+            alt="AInstein talking with human in 2030!"
+          />
+        </div>
+      </div>
+      <video
+        ref={ref}
+        autoPlay={!isBot}
+        loop
+        playsInline
+        muted
+        className={`relative z-20 h-full w-full object-cover transition-opacity ${isBot ? 'opacity-0' : 'opacity-100'}`}
+      >
         <source src="/intro.mp4" type="video/mp4" />
       </video>
       <div className="absolute right-4 bottom-4 z-50">

@@ -4,36 +4,19 @@ import './default.css';
 import Header from '@/components/Header';
 import { description } from './page';
 import { Metadata } from 'next';
-import Link from 'next/link';
+import Footer from '@/components/footer/Footer';
 
 const RootLayout = ({ children }: ChildrenProps) => {
   return (
     <html lang="en">
-      <body cz-shortcut-listen="true">
+      <body className="dark" cz-shortcut-listen="true">
         <div className="relative">
           <div>
             <Header />
             {children}
           </div>
         </div>
-        <div className="pt-spacing-7 mt-spacing-7 w-full bg-black text-white">
-          <div className="pnl-container">
-            <div className="cols-container">
-              <div className="w-6-cols md:w-8-cols md:mb-12 lg:w-4-cols lg:mb-0">
-                <Link href={'/'}>LOGO</Link>
-              </div>
-            </div>
-          </div>
-          <div className="mt-spacing-7 bg-white pb-spacing-7">
-            <div className="mt-[23px]">
-              {Array.from({ length: 24 }, (_, i) => i)
-                .reverse()
-                .map((reverse, i) => (
-                  <div key={i} className="bg-black" style={{ marginTop: i, height: reverse }} />
-                ))}
-            </div>
-          </div>
-        </div>
+        <Footer />
       </body>
     </html>
   );

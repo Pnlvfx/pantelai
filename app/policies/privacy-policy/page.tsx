@@ -1,6 +1,7 @@
 import PolicyHeader from '@/components/policies/PolicyHeader';
 import UIpolicyHead from '@/components/policies/UIpolicyHead';
 import UIpolicyText from '@/components/policies/UIpolicyText';
+import { email } from '@/config/config';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -71,6 +72,16 @@ const PolicyPage = () => {
             <p>
               Depending on location, individuals in the EEA, the UK, and across the globe may have certain statutory rights in relation to their
               Personal Information. For example, you may have the right to:
+            </p>
+            <ul>
+              <li>Access your Personal Information.</li>
+              <li>Delete your Personal Information.</li>
+              <li>Correct or update your Personal Information.</li>
+              <li>Transfer your Personal Information elsewhere.</li>
+            </ul>
+            <p className="mt-4">
+              You can exercise some of these rights through your PantelAI account. If you are unable to exercise your rights through your account,
+              please send your request to {email}.
             </p>
           </UIpolicyText>
         </div>
