@@ -6,6 +6,7 @@ import { description } from './page';
 import { Metadata } from 'next';
 import Footer from '@/components/footer/Footer';
 import { Analytics } from '@vercel/analytics/react';
+import UserAnalytics from '@/components/utils/UserAnalytics';
 
 const RootLayout = ({ children }: ChildrenProps) => {
   return (
@@ -16,6 +17,7 @@ const RootLayout = ({ children }: ChildrenProps) => {
             <Header />
             {children}
             <Analytics />
+            <UserAnalytics />
           </div>
         </div>
         <Footer />
