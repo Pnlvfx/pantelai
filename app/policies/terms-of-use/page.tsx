@@ -9,6 +9,9 @@ const TermOfUsePage = () => {
   return (
     <div>
       <PolicyHeader title="Terms of use" />
+      <div>
+        <div></div>
+      </div>
     </div>
   );
 };
