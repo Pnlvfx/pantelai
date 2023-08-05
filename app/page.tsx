@@ -1,13 +1,21 @@
-import BgVideo from '@/components/home/BgVideo';
-import HomeBlock from '@/components/home/HomeBlock';
-import { chatUrl, clientUrl } from '@/config/config';
-import { Metadata } from 'next';
-import { headers } from 'next/headers';
-import { userAgentFromString } from 'next/server';
-export const description = 'Introducing AInstein, PantelAI most advanced system';
+import BgVideo from "@/components/home/BgVideo";
+import HomeBlock from "@/components/home/HomeBlock";
+import { clientUrl } from "@/config/config";
+import { Metadata } from "next";
+import { headers } from "next/headers";
+import { userAgentFromString } from "next/server";
+const title = "Try our text-to-video AI"; // "Try AInstein chat";
+export const description =
+  "Introducing our text-to-video, PantelAI most advanced system";
+//"Introducing AInstein, PantelAI most advanced system";
+
+const blockTitle = "Text-To-Video"; //"ChatGPT";
+const blockDescription =
+  "We use an AI which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer follow-up questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests.";
+const blockUrl = "";
 
 const Home = () => {
-  const userAgent = headers().get('user-agent');
+  const userAgent = headers().get("user-agent");
   let isBot = false;
   if (userAgent) {
     const ua = userAgentFromString(userAgent);
@@ -22,22 +30,21 @@ const Home = () => {
           <div className="pnl-container absolute bottom-[13px] md:bottom-[22px] inset-x-0">
             <div className="cols-container">
               <div className="relative z-40 w-6-cols md:w-8-cols">
-                <h1 className="text-[2.625rem] md:text-[3.4375rem] leading-[110%] pointer-events-auto">{description}</h1>
-                <ul className="mt-12 mr-[60px] flex flex-row flex-wrap items-center md:mr-0 pointer-events-auto">
-                  <li className="mr-4 shrink-0 relative mb-[10px]">
-                    <a rel="noopener" target="_blank" href={chatUrl} className="relative inline-block">
-                      <span className="flex items-center">
-                        <span className="underline underline-offset-4 text-[16px] leading-[130%]">Try AInstein chat</span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
+                {/* <Product
+                  description={description}
+                  url={''}
+                  title={title}
+                /> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <HomeBlock />
+      {/* <HomeBlock
+        description={blockDescription}
+        title={blockTitle}
+        url={blockUrl}
+      /> */}
     </div>
   );
 };
@@ -47,18 +54,18 @@ export default Home;
 export const metadata: Metadata = {
   description,
   openGraph: {
-    title: 'PantelAI',
+    title: "PantelAI",
     description,
     images: {
       url: `${clientUrl}/intro-thumb.png`,
-      alt: 'AInstein talking with human in 2030!',
+      alt: "AInstein talking with human in 2030!",
     },
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: {
       url: `${clientUrl}/intro-thumb.png`,
-      alt: 'AInstein talking with human in 2030!',
+      alt: "AInstein talking with human in 2030!",
     },
   },
 };
